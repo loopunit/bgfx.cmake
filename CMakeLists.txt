@@ -26,7 +26,7 @@ CPMAddPackage(
 	DOWNLOAD_ONLY TRUE
 )
 
-if( NOT bgfx_ADDED )
+if( NOT ${bgfx_ADDED} )
 	message( FATAL_ERROR "Could not find bgfx" )
 endif()
 
@@ -37,7 +37,7 @@ CPMAddPackage(
 	DOWNLOAD_ONLY TRUE
 )
 
-if( NOT bimg_ADDED )
+if( NOT ${bimg_ADDED} )
 	message( FATAL_ERROR "Could not find bimg" )
 endif()
 
@@ -48,7 +48,7 @@ CPMAddPackage(
 	DOWNLOAD_ONLY TRUE
 )
 
-if( NOT bx_ADDED )
+if( NOT ${bx_ADDED} )
 	message( FATAL_ERROR "Could not find bx" )
 endif()
 
