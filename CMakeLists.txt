@@ -11,6 +11,51 @@
 cmake_minimum_required( VERSION 3.0 )
 project(bgfx)
 
+
+# ---- Add dependencies via CPM ----
+# see https://github.com/TheLartians/CPM.cmake for more info
+
+include(cmake/3rdparty/CPM.cmake)
+
+####
+
+CPMAddPackage(
+	NAME bgfx
+	GITHUB_REPOSITORY bkaradzic/bgfx
+	GIT_TAG e08de6dd2cf126bf7c4c8276ce80dfd955b05f57
+	DOWNLOAD_ONLY TRUE
+)
+
+if( NOT bgfx_ADDED )
+	message( FATAL_ERROR "Could not find bgfx" )
+endif()
+
+CPMAddPackage(
+	NAME bimg
+	GITHUB_REPOSITORY bkaradzic/bimg
+	GIT_TAG 5ee42f6de1c18345f7ad58bae71f2b1f38ecc9bd
+	DOWNLOAD_ONLY TRUE
+)
+
+if( NOT bimg_ADDED )
+	message( FATAL_ERROR "Could not find bimg" )
+endif()
+
+CPMAddPackage(
+	NAME bx
+	GITHUB_REPOSITORY bkaradzic/bx
+	GIT_TAG b1a707fac854753088d9b17ceef11d20dd01ad20
+	DOWNLOAD_ONLY TRUE
+)
+
+if( NOT bx_ADDED )
+	message( FATAL_ERROR "Could not find bx" )
+endif()
+
+message( STATUS "Building bgfx via: ${bgfx_SOURCE_DIR}")
+message( STATUS "Building bimg via: ${bimg_SOURCE_DIR}")
+message( STATUS "Building bx via: ${bx_SOURCE_DIR}")
+
 # sets project version from api ver / git rev
 include( cmake/version.cmake )
 
@@ -42,17 +87,17 @@ set( BGFX_LIBRARY_TYPE     "STATIC" CACHE STRING "Linking type for library" )
 set_property( CACHE BGFX_LIBRARY_TYPE PROPERTY STRINGS STATIC SHARED )
 
 if( NOT BX_DIR )
-	set( BX_DIR "${CMAKE_CURRENT_SOURCE_DIR}/bx" CACHE STRING "Location of bx." )
+	set( BX_DIR ${bx_SOURCE_DIR} CACHE STRING "Location of bx." )
 elseif( NOT IS_ABSOLUTE "${BX_DIR}")
 	get_filename_component(BX_DIR "${BX_DIR}" REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 endif()
 if( NOT BIMG_DIR )
-	set( BIMG_DIR "${CMAKE_CURRENT_SOURCE_DIR}/bimg" CACHE STRING "Location of bimg." )
+	set( BIMG_DIR ${bimg_SOURCE_DIR} CACHE STRING "Location of bimg." )
 elseif( NOT IS_ABSOLUTE "${BIMG_DIR}")
 	get_filename_component(BIMG_DIR "${BIMG_DIR}" REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 endif()
 if( NOT BGFX_DIR )
-	set( BGFX_DIR "${CMAKE_CURRENT_SOURCE_DIR}/bgfx" CACHE STRING "Location of bgfx." )
+	set( BGFX_DIR ${bgfx_SOURCE_DIR} CACHE STRING "Location of bgfx." )
 elseif( NOT IS_ABSOLUTE "${BGFX_DIR}")
 	get_filename_component(BGFX_DIR "${BGFX_DIR}" REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 endif()
