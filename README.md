@@ -1,6 +1,6 @@
 bgfx.cpm
 ===================
-This is a mirror (for now) of [url=https://github.com/widberg/bgfx.cmake]bgfx.cmake[/url] with [url=https://github.com/TheLartians/CPM.cmake]CPM[/url] used instead of submodules.
+This is a mirror (for now) of [bgfx.cmake](https://github.com/widberg/bgfx.cmake) with [CPM](https://github.com/TheLartians/CPM.cmake) used instead of submodules.
 
 Things may diverge & become increasingly CPMified in the future.
 
