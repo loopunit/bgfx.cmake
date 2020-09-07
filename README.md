@@ -1,4 +1,8 @@
-bgfx.cpm is a CPM-ified fork of bgfx.cmake.
+bgfx.cpm
+===================
+This is a mirror (for now) of [url=https://github.com/widberg/bgfx.cmake]bgfx.cmake[/url] with [url=https://github.com/TheLartians/CPM.cmake]CPM[/url] used instead of submodules.
+
+Things may diverge & become increasingly CPMified in the future.
 
 bgfx.cmake
 ===================
