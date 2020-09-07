@@ -4,6 +4,15 @@ This is a mirror (for now) of [bgfx.cmake](https://github.com/widberg/bgfx.cmake
 
 Things may diverge & become increasingly CPMified in the future.
 
+Add it from a CPM-enabled project thusly:
+```
+CPMAddPackage(
+	NAME bgfx_cpm
+	GITHUB_REPOSITORY loopunit/bgfx.cpm
+	GIT_TAG 4df771a3733858b0125d6f4eb15176dac538683f
+)
+```
+
 bgfx.cmake
 ===================
 [![Build Status](https://travis-ci.org/widberg/bgfx.cmake.svg?branch=master)](https://travis-ci.org/widberg/bgfx.cmake)
