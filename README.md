@@ -1,3 +1,5 @@
+bgfx.cpm is a CPM-ified fork of bgfx.cmake.
+
 bgfx.cmake
 ===================
 [![Build Status](https://travis-ci.org/widberg/bgfx.cmake.svg?branch=master)](https://travis-ci.org/widberg/bgfx.cmake)
