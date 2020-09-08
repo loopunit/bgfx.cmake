@@ -10,6 +10,7 @@ CPMAddPackage(
 	NAME bgfx_cpm
 	GITHUB_REPOSITORY loopunit/bgfx.cpm
 	GIT_TAG 0.0.1
+	OPTIONS "CPM_SOURCE_CACHE=${CPM_SOURCE_CACHE}"
 )
 ```
 
