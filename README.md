@@ -9,7 +9,7 @@ Add it from a CPM-enabled project thusly:
 CPMAddPackage(
 	NAME bgfx_cpm
 	GITHUB_REPOSITORY loopunit/bgfx.cpm
-	GIT_TAG 4df771a3733858b0125d6f4eb15176dac538683f
+	GIT_TAG cb9f885c51fca2a865f1116d9d4b2319f28a7675
 )
 ```
 
