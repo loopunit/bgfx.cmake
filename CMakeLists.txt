@@ -198,10 +198,13 @@ if( BGFX_INSTALL )
 		install( TARGETS geometryc
 			EXPORT "${TARGETS_EXPORT_NAME}"
 			DESTINATION "${CMAKE_INSTALL_BINDIR}" )
-    	install( TARGETS geometryv
+		install( TARGETS texturec
 			EXPORT "${TARGETS_EXPORT_NAME}"
 			DESTINATION "${CMAKE_INSTALL_BINDIR}" )
-		install( TARGETS texturec
+	endif()
+
+	if( BGFX_BUILD_EXAMPLES )
+    	install( TARGETS geometryv
 			EXPORT "${TARGETS_EXPORT_NAME}"
 			DESTINATION "${CMAKE_INSTALL_BINDIR}" )
 		install( TARGETS texturev

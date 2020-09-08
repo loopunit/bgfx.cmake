@@ -8,16 +8,18 @@
 # You should have received a copy of the CC0 Public Domain Dedication along with
 # this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-include( CMakeParseArguments )
-
-add_executable( texturev ${BGFX_DIR}/tools/texturev/texturev.cpp )
-set_target_properties( texturev PROPERTIES FOLDER "bgfx/tools" )
-target_link_libraries( texturev example-common )
-if( BGFX_CUSTOM_TARGETS )
-	add_dependencies( tools texturev )
-endif()
-
-if (IOS)
-	set_target_properties(texturev PROPERTIES MACOSX_BUNDLE ON
-										      MACOSX_BUNDLE_GUI_IDENTIFIER texturev)
+if(BGFX_BUILD_EXAMPLES)
+	include( CMakeParseArguments )
+	
+	add_executable( texturev ${BGFX_DIR}/tools/texturev/texturev.cpp )
+	set_target_properties( texturev PROPERTIES FOLDER "bgfx/tools" )
+	target_link_libraries( texturev example-common )
+	if( BGFX_CUSTOM_TARGETS )
+		add_dependencies( tools texturev )
+	endif()
+	
+	if (IOS)
+		set_target_properties(texturev PROPERTIES MACOSX_BUNDLE ON
+											      MACOSX_BUNDLE_GUI_IDENTIFIER texturev)
+	endif()
 endif()

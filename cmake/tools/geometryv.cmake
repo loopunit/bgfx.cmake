@@ -8,14 +8,16 @@
 # You should have received a copy of the CC0 Public Domain Dedication along with
 # this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-add_executable( geometryv ${BGFX_DIR}/tools/geometryv/geometryv.cpp )
-set_target_properties( geometryv PROPERTIES FOLDER "bgfx/tools" )
-target_link_libraries( geometryv example-common )
-if( BGFX_CUSTOM_TARGETS )
-	add_dependencies( tools geometryv )
-endif()
+if(BGFX_BUILD_EXAMPLES)
+	add_executable( geometryv ${BGFX_DIR}/tools/geometryv/geometryv.cpp )
+	set_target_properties( geometryv PROPERTIES FOLDER "bgfx/tools" )
+	target_link_libraries( geometryv example-common )
+	if( BGFX_CUSTOM_TARGETS )
+		add_dependencies( tools geometryv )
+	endif()
 
-if (IOS)
-	set_target_properties(geometryv PROPERTIES MACOSX_BUNDLE ON
-										      MACOSX_BUNDLE_GUI_IDENTIFIER geometryv)
+	if (IOS)
+		set_target_properties(geometryv PROPERTIES MACOSX_BUNDLE ON
+												  MACOSX_BUNDLE_GUI_IDENTIFIER geometryv)
+	endif()
 endif()
