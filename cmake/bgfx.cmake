@@ -67,6 +67,8 @@ if( NOT ${BGFX_OPENGLES_VERSION} STREQUAL "" )
 endif()
 
 # Special Visual Studio Flags
+target_compile_definitions( bgfx PUBLIC "BGFX_CONFIG_MULTITHREADED=0" )
+
 if( MSVC )
 	target_compile_definitions( bgfx PRIVATE "_CRT_SECURE_NO_WARNINGS" )
 endif()
