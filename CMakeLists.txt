@@ -69,6 +69,8 @@ if( APPLE AND NOT XCODE )
 	set( CMAKE_CXX_FLAGS "-ObjC++" )
 endif()
 
+set(BGFX_CPM_ROOT ${CMAKE_CURRENT_LIST_DIR})
+
 option( BGFX_BUILD_TOOLS      "Build bgfx tools."                             ON  )
 option( BGFX_BUILD_EXAMPLES   "Build bgfx examples."                          ON  )
 option( BGFX_INSTALL          "Create installation target."                   ON  )
@@ -130,7 +132,8 @@ if( BGFX_BUILD_EXAMPLES )
 	include( cmake/examples.cmake )
 endif()
 
-if( BGFX_INSTALL )
+if( false )
+#if( BGFX_INSTALL )
 	include(GNUInstallDirs)
 
 	# Layout. This works for all platforms:
